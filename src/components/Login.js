@@ -1,4 +1,4 @@
-// src/components/Login.js
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AuthForm.css';
@@ -9,11 +9,11 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const allowedUsernames = ['jai', 'venkat', 'ram'];
+    const allowedUsernames = ['jai', 'venkat', 'ram' , "venky"  ];
     if (allowedUsernames.includes(username)) {
       const user = { username, password };
       localStorage.setItem('currentUser', JSON.stringify(user));
-      localStorage.removeItem('messages'); // Clear previous messages
+      localStorage.removeItem('messages'); 
       navigate('/');
     } else {
       alert('Invalid username');
@@ -22,6 +22,12 @@ function Login() {
 
   return (
     <div className="auth-form">
+
+
+
+
+
+    
       <h2>Login</h2>
       <input
         type="text"
